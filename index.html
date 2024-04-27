@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb-Toggler</title>
+    <style>
+        body {
+            background-image: radial-gradient(circle 369px at -2.9% 12.9%,
+                    rgba(247, 234, 163, 1) 0%, rgba(236, 180, 238, 0.56) 46.4%,
+                    rgba(163, 203, 247, 1) 100.7%);
+            min-height: 100hv;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn-toggle {
+            font-size: 20px;
+            padding: 5px 20px;
+            border-radius: 40px;
+            border: none;
+            margin: 0 20px;
+            cursor: pointer;
+            background-color: #7897be;
+        }
+
+        .btn-toggle:hover {
+            background: linear-gradient(45deg, #e6a9c4, #2e192438);
+            border: 1px solid #e6a9c4;
+        }
+
+        .app-title {
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .blub-container {
+            background-color: white;
+            width: 400px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+
+        .bulb-img {
+            height: 250px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .blub-container {
+                width: 80%
+            }
+
+            .bulb-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="app-title">Bulb Toggler</h1>
+    <div class="blub-container">
+        <img src="bulb-off.png" class="bulb-img" id="bulb" />
+    </div>
+    <div class="btn-container">
+        <button class="btn-toggle" onclick="turnOn()">On</button>
+        <button class="btn-toggle" onclick="turnOff()">Of</button>
+    </div>
+
+    <script>
+        function turnOn() {
+            const bulbElement = document.getElementById('bulb');
+            bulbElement.src = 'bulb-on.png';
+        }
+        function turnOff() {
+            const bulbElement = document.getElementById('bulb');
+            bulbElement.src = 'bulb-off.png';
+        }
+    </script>
+
+</body>
+
+</html>
